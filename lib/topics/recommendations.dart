@@ -22,7 +22,7 @@ class Recommendations {
     },
     {
       "category_id": 4,
-      "category_name": ["ES・面接で問われる就活話題", "Questions in a Job interbiew"],
+      "category_name": ["ES・面接で問われる就活話題", "Questions in a Job interview"],
       "img_url_snippet": "r_ES"
     }
   ];
@@ -32,8 +32,8 @@ class Recommendations {
       ["何か一つだけ無人島に持っていくなら", "1 thing I would take to a desert island"],
       ["一億円あったらどう使う?", "What would you do with ＄1,000,000 if you had it?"],
       ["一ヶ月の休暇があったらどう使う？", "What would you do if you had 1 months vacation?"],
-      ["明日死ぬなら何をする？", "What would you do if you were going to die tommorow?"],
-      ["今着ている服の購入背景", "Explain why,when,where you bought the outfit you'er wearing"],
+      ["明日死ぬなら何をする？", "What would you do if you were going to die tomorrow?"],
+      ["今着ている服の購入背景", "Explain why,when,where you bought the outfit you're wearing"],
       ["今朝起きて最初にしたこと", "What I did first in this morning"],
       ["最近見た夢", "The latest dream I had"],
       ["今週末の予定", "What are you doing this weekend?"],
@@ -112,7 +112,7 @@ class Recommendations {
       ["最高のご飯のお供", "The best combination of food"],
       ["昔からの宝物", "My treasure from my childhood"],
       ["これに弱い", "What I have weakness for"],
-      ["好きなコンビニ", "Favirite store"],
+      ["好きなコンビニ", "Favorite store"],
       ["携帯と財布以外の必需品", "Necessities except for a phone and a wallet"],
       ["過去一番高額な買い物", "The most expensive thing I've ever bought"],
       ["ケータイのホーム画面公開！", "Show your phone wallpaper!"],
@@ -154,7 +154,7 @@ class Recommendations {
       ["座右の銘", "My motto"],
       ["私のこだわり", "What I’m particular about"],
       ["趣味、特技", "My hobby ＆　specialty"],
-      ["他人に負けないこと", "What I confient in (What I excel at)"],
+      ["他人に負けないこと", "What I confident in (What I excel at)"],
       ["大学でなにを学んだか", "What I learn in college"],
       ["学業で頑張ったこと、学業以外で頑張ったこと", "What I had been working on (both academic work & non-academic work)"],
       ["学生時代一番楽しかったこと・辛かったこと", "the best part & the hardest part of my college life"],
