@@ -2,11 +2,9 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:topick/codes/SelectionTypeCode.dart';
 
 import '../constants.dart';
-import '../main.dart';
 import '../topics/categories.dart';
 import '../topics/scenes.dart';
 
@@ -23,8 +21,6 @@ class _SelectPageState extends State<SelectPage> {
   int _spotNum = 0;
   Size? _screenSize;
   double? _cardHeight;
-  double _largeFlickVelocityThreshold = 1600.0;
-  double _minimumFlickVelocityThreshold = 1000.0;
 
   void _setSpotNum(int num) {
     setState(() {
@@ -92,7 +88,7 @@ class _SelectPageState extends State<SelectPage> {
     final snippet = selection['img_url_snippet'] as String;
     var imgUrl = 'assets/images/$snippet/$snippet@2x.png';
     return GestureDetector(
-      onTap: () => print(selection['category_id']),
+      onTap: () => Navigator.of(context).pushNamed('/topics', arguments: selection),
       child: Image.asset(imgUrl, fit: BoxFit.fitHeight,),
     );
   }

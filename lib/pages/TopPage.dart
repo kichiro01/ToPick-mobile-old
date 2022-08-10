@@ -14,7 +14,6 @@ class TopPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called
     return Scaffold(
         appBar: AppBar(
           title: Image.asset('assets/images/header-parts/header.png', height: 50),
@@ -62,7 +61,7 @@ class TopPage extends StatelessWidget {
         // padding: const EdgeInsets.only(bottom: 10.0),
         child: ListTile(title: Text(selectionType.getLabel(), style: const TextStyle(fontSize: 18, color: AppConstants.subColor),),
           onTap: () => {
-            context.read<AppState>().setSelectionType(selectionType),
+            // context.read<AppState>().setSelectionType(selectionType),
             Navigator.of(context).pushNamed('/select', arguments: selectionType)
           },)
     );

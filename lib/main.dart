@@ -5,6 +5,7 @@ import 'package:topick/codes/SelectionTypeCode.dart';
 import 'package:topick/constants.dart';
 import 'package:topick/pages/SelectPage.dart';
 import 'package:topick/pages/TopPage.dart';
+import 'package:topick/pages/TopicListPage.dart';
 import 'package:topick/topics/recommendations.dart';
 
 void main() {
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         home: const TopPage(),
         routes: <String, WidgetBuilder> {
           '/select': (BuildContext context) => SelectPage(selectionType: ModalRoute.of(context)!.settings.arguments as SelectionType),
+          '/topics': (BuildContext context) => TopicListPage(selection: ModalRoute.of(context)!.settings.arguments as Map<String, Object>),
         }
       )
     );
