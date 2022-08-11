@@ -7,14 +7,15 @@ import '../topics/recommendations.dart';
 import '../topics/scenes.dart';
 
 class TopicListPage extends StatelessWidget {
-  const TopicListPage({Key? key, required this.selection}) : super(key: key);
-  const TopicListPage.noDescription({Key? key, required this.selection, fromTopPage = true}) : super(key: key);
+  const TopicListPage({Key? key, required this.selection, this.fromTopPage = false}) : super(key: key);
+  const TopicListPage.noDescription({Key? key, required this.selection, this.fromTopPage = true}) : super(key: key);
 
   final Map<String, Object> selection;
-  final fromTopPage = false;
+  final bool fromTopPage;
 
   @override
   Widget build(BuildContext context) {
+    print(selection);
     final title = selection['category_name'] as List<String>;
     final snippet = selection['img_url_snippet'] as String;
     final imgUrl = 'assets/images/$snippet/${snippet}_background@2x.png';

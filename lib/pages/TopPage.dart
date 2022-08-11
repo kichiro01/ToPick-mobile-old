@@ -77,13 +77,13 @@ class TopPage extends StatelessWidget {
           Expanded(child: Text("オススメ話題集", style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700)))
         ],),
       ),
-      _recommendCards()
+      _recommendCards(context)
     ],
     );
   }
 
   // 「オススメ話題週」のカードウィジェット
-  Widget _recommendCards() {
+  Widget _recommendCards(BuildContext context) {
     const recommendations = Recommendations.recommendations;
     return GridView.count(
       // padding: const EdgeInsets.all(4.0),
@@ -98,7 +98,9 @@ class TopPage extends StatelessWidget {
         var titleList = recommendations[index]["category_name"] as List<String>;
         var imgUrlSnippet = recommendations[index]['img_url_snippet'] as String;
         var imgUrl = 'assets/images/$imgUrlSnippet/$imgUrlSnippet.png';
-        return Column(
+        return GestureDetector(
+          onTap: () => Navigator.of(context).pushNamed('/topics/?noDescription', arguments: recommendations[index]),
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               SizedBox(
@@ -107,6 +109,7 @@ class TopPage extends StatelessWidget {
               ),
               Text(titleList[0], style: const TextStyle(fontSize: 12))
             ]
+          )
         );
       }),
     );

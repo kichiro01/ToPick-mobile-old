@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
         routes: <String, WidgetBuilder> {
           '/select': (BuildContext context) => SelectPage(selectionType: ModalRoute.of(context)!.settings.arguments as SelectionType),
           '/topics': (BuildContext context) => TopicListPage(selection: ModalRoute.of(context)!.settings.arguments as Map<String, Object>),
+          '/topics/?noDescription': (BuildContext context) => TopicListPage.noDescription(selection: ModalRoute.of(context)!.settings.arguments as Map<String, Object>),
         }
       )
     );
