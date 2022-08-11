@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:topick/codes/SelectionTypeCode.dart';
 import 'package:topick/constants.dart';
 import 'package:topick/pages/SelectPage.dart';
+import 'package:topick/pages/ShufflePage.dart';
 import 'package:topick/pages/TopPage.dart';
 import 'package:topick/pages/TopicListPage.dart';
 import 'package:topick/topics/recommendations.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
           '/select': (BuildContext context) => SelectPage(selectionType: ModalRoute.of(context)!.settings.arguments as SelectionType),
           '/topics': (BuildContext context) => TopicListPage(selection: ModalRoute.of(context)!.settings.arguments as Map<String, Object>),
           '/topics/?noDescription': (BuildContext context) => TopicListPage.noDescription(selection: ModalRoute.of(context)!.settings.arguments as Map<String, Object>),
+          '/shuffle': (BuildContext context) => ShufflePage(topicList: ModalRoute.of(context)!.settings.arguments as List<List<String>>,),
         }
       )
     );

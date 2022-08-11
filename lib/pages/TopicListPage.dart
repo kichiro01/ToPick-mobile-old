@@ -15,7 +15,6 @@ class TopicListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(selection);
     final title = selection['category_name'] as List<String>;
     final snippet = selection['img_url_snippet'] as String;
     final imgUrl = 'assets/images/$snippet/${snippet}_background@2x.png';
@@ -28,7 +27,7 @@ class TopicListPage extends StatelessWidget {
           margin: const EdgeInsets.only(right: 12),
           child: GestureDetector(
             child: const Icon(Icons.shuffle),
-            onTap: () => { print('onTapShuffle') },
+            onTap: () => Navigator.of(context).pushNamed('/shuffle', arguments: _getTopicList()),
           ),
         )
       ],
@@ -78,21 +77,9 @@ class TopicListPage extends StatelessWidget {
   }
 
   Widget _listArea() {
-    Map<String, List<List<String>>> topics = {'': [['', ''], ['', '']]};
-    switch (_firstCharacter(selection['img_url_snippet'] as String)) {
-      case 'c':
-        topics = Categories.topics;
-        break;
-      case 's':
-        topics = Scenes.topics;
-        break;
-      case 'r':
-        topics = Recommendations.topics;
-        break;
-    }
-    final topicList = topics[(selection['category_id'] as int).toString()];
+    final topicList = _getTopicList();
     return ListView.builder(
-        itemCount: topicList!.length,
+        itemCount: topicList.length,
         shrinkWrap: true,
         itemBuilder: (BuildContext context, int index){
           return Container(
@@ -117,5 +104,21 @@ class TopicListPage extends StatelessWidget {
 
   String _firstCharacter(String snippet) {
     return snippet.substring(0, 1);
+  }
+
+  List<List<String>> _getTopicList() {
+    Map<String, List<List<String>>> topics = {'': [['', ''], ['', '']]};
+    switch (_firstCharacter(selection['img_url_snippet'] as String)) {
+      case 'c':
+        topics = Categories.topics;
+        break;
+      case 's':
+        topics = Scenes.topics;
+        break;
+      case 'r':
+        topics = Recommendations.topics;
+        break;
+    }
+    return topics[(selection['category_id'] as int).toString()]!;
   }
 }
