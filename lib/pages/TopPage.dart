@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:topick/codes/SelectionTypeCode.dart';
-import 'package:topick/constants.dart';
-import 'package:topick/pages/SelectPage.dart';
-import 'package:topick/pages/TopPage.dart';
+import 'package:topick/constants/ColorConstants.dart';
 import 'package:topick/topics/recommendations.dart';
 
-import '../main.dart';
+import '../constants/Strings.dart';
+import '../constants/StyleConstants.dart';
 
 class TopPage extends StatelessWidget {
   const TopPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Image.asset('assets/images/header-parts/header.png', height: 50),
-          backgroundColor: AppConstants.baseColor,
-        ),
-        body: Container(
-            margin: const EdgeInsets.all(16.0),
-            child: SingleChildScrollView(child: Column(
-                children: [
-                  _selectArea(context),
-                  _recommendationArea(context)
-                ]),)
-        )
+    return Container(
+        margin: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(child: Column(
+            children: [
+              _selectArea(context),
+              _recommendationArea(context)
+            ]),)
     );
   }
 
@@ -38,8 +29,8 @@ class TopPage extends StatelessWidget {
             border: Border(bottom: BorderSide(width: 1.0, color: Color(0xFFC8C7CC)))
         ),
         padding: const EdgeInsets.only(bottom: 12.0),
-        child: Row(children: const [
-          Expanded(child: Text("話題を選ぶ", style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700)))
+        child: Row(children: [
+          Expanded(child: Text(Strings.PAGE_TITLE_SELECT_TOPIC, style: StyleConstants.PAGE_TITLE_TEXTSTYLE))
         ],),
       ),
       ListView(
@@ -52,6 +43,7 @@ class TopPage extends StatelessWidget {
     ],
     );
   }
+
   // 「話題を選ぶ」のリストウィジェット
   Widget _listTile(BuildContext context, SelectionType selectionType) {
     return Container(
@@ -59,7 +51,7 @@ class TopPage extends StatelessWidget {
             border: Border(bottom: BorderSide(width: 1.0, color: Color(0xFFC8C7CC)))
         ),
         // padding: const EdgeInsets.only(bottom: 10.0),
-        child: ListTile(title: Text(selectionType.getLabel(), style: const TextStyle(fontSize: 18, color: AppConstants.subColor),),
+        child: ListTile(title: Text(selectionType.getLabel(), style: const TextStyle(fontSize: 18, color: ColorConstants.subColor),),
           onTap: () => {
             // context.read<AppState>().setSelectionType(selectionType),
             Navigator.of(context).pushNamed('/select', arguments: selectionType)
@@ -67,14 +59,13 @@ class TopPage extends StatelessWidget {
     );
   }
 
-  // 「オススメ」話題週のエリア
+  // 「オススメ」話題集のエリア
   Widget _recommendationArea(BuildContext context) {
-
     return Column(children: [
       Container(
         margin: EdgeInsets.only(bottom: 12),
-        child: Row(children: const [
-          Expanded(child: Text("オススメ話題集", style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700)))
+        child: Row(children: [
+          Expanded(child: Text(Strings.PAGE_TITLE_SELECT_TOPIC, style: StyleConstants.PAGE_TITLE_TEXTSTYLE))
         ],),
       ),
       _recommendCards(context)
@@ -82,7 +73,7 @@ class TopPage extends StatelessWidget {
     );
   }
 
-  // 「オススメ話題週」のカードウィジェット
+  // 「オススメ話題集」のカードウィジェット
   Widget _recommendCards(BuildContext context) {
     const recommendations = Recommendations.recommendations;
     return GridView.count(

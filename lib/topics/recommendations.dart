@@ -134,7 +134,7 @@ class Recommendations {
       ["稼げる嫌いな仕事 or 稼げない好きな仕事", "Job which makes a lot of money / Job I love"],
       ["年中夏 or 年中冬", "Hot climate / Cold climate （which lasts forever）"],
       ["未来が見れる or 過去が見れる（現実と同じ）", "Know future / know past(same as real world)"],
-      ["嫌われ者のな富豪 or 人気者の貧乏人", "Rich but everyone hate you / Poor but everyone like you"],
+      ["嫌われ者の富豪 or 人気者の貧乏人", "Rich but everyone hate you / Poor but everyone like you"],
       ["色がない世界 or 音のない世界", "The world with no color / The world with no sound"],
       ["自分だけブサイク or 自分以外全員ブサイク", "I'm the only one who has ugly face / I have beautiful face but everyone else is ugly"],
       ["付き合うなら好みの　顔 or 性格", "I need my boyfriend/girlfriend  a beautiful face / a great personality"],

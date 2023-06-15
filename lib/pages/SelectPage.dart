@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:topick/codes/SelectionTypeCode.dart';
 
-import '../constants.dart';
+import '../constants/ColorConstants.dart';
 import '../topics/categories.dart';
 import '../topics/scenes.dart';
 
@@ -35,9 +35,9 @@ class _SelectPageState extends State<SelectPage> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.selectionType.getLabel(), style: const TextStyle(color: AppConstants.subColor, fontWeight: FontWeight.bold),),
-          backgroundColor: AppConstants.baseColor,
-          iconTheme: const IconThemeData(color: AppConstants.subColor),
+          title: Text(widget.selectionType.getLabel(), style: const TextStyle(color: ColorConstants.subColor, fontWeight: FontWeight.bold),),
+          backgroundColor: ColorConstants.baseColor,
+          iconTheme: const IconThemeData(color: ColorConstants.subColor),
         ),
         body: _body()
     );
@@ -52,8 +52,8 @@ class _SelectPageState extends State<SelectPage> {
           child: Column(
             children:  [
               Container(margin: const EdgeInsets.only(bottom: 11), child: Text((_selectionInfo![_spotNum]['category_name'] as List<String>)[0], style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,),),),
-              Container(margin: const EdgeInsets.only(bottom: 2), child: Text((_selectionInfo![_spotNum]['description1'] as List<String>)[0], style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppConstants.darkGrey))),
-              Container(margin: const EdgeInsets.only(bottom: 50), child: Text((_selectionInfo![_spotNum]['description2'] as List<String>)[0], style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: AppConstants.darkGrey))),
+              Container(margin: const EdgeInsets.only(bottom: 2), child: Text((_selectionInfo![_spotNum]['description1'] as List<String>)[0], style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: ColorConstants.darkGrey))),
+              Container(margin: const EdgeInsets.only(bottom: 50), child: Text((_selectionInfo![_spotNum]['description2'] as List<String>)[0], style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: ColorConstants.darkGrey))),
               _selectionArea()
             ],
           ),

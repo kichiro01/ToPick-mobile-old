@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:topick/constants.dart';
+import 'package:topick/constants/ColorConstants.dart';
 import 'package:topick/topics/categories.dart';
 
 import '../topics/recommendations.dart';
@@ -91,7 +91,7 @@ class TopicListPage extends StatelessWidget {
             child: ListTile(
               title: Text(topicList[index][0], textAlign: TextAlign.center,),
               trailing: IconButton(
-                icon: const Icon(Icons.control_point, color: AppConstants.subColor,),
+                icon: const Icon(Icons.control_point, color: ColorConstants.subColor,),
                 onPressed: () { print('someting'); },
 
               ),
